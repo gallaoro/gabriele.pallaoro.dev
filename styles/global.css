@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* purgecss start ignore */
+.post h1{
+  font-size: 3em;
+}
+
+/* purgecss end ignore */
