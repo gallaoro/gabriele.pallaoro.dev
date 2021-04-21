@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const posts = getPosts();
+  const posts = getPosts().filter(el => el.type === 'markdown');
   const paths = posts.map(el => ({ params: { ...el } }));
 
   return {
