@@ -1,11 +1,13 @@
-import styles from '../styles/Backgrounds.module.css'
-import LatestPosts from '../components/LatestPosts'
-import SEO from '../components/SEO'
+import styles from '../styles/Backgrounds.module.css';
+// import LatestPosts from '../components/LatestPosts';
+import Portfolio from '../components/Portfolio';
+import SEO from '../components/SEO';
 
-import { getPosts } from './api/posts'
+import { getStuffIMade } from './api/stuffIMade';
+import { getPosts } from './api/posts';
 import moment from 'moment';
 
-export default function Home({ posts = [] }) {
+export default function Home({ posts = [], stuffIMade = [] }) {
   return (
     <>
       <SEO />
@@ -32,9 +34,9 @@ export default function Home({ posts = [] }) {
                     <p className="font-sans text-xs text-gray-700 mb-0"><a href="https://twitter.com/scusanonhocapit" title="twitter">twitter</a>, <a href="https://github.com/gallaoro" title="github">github</a></p>
                   </div>
                 </div>
-                {/* <div className="pt-3 border-t border-gray-400">
-                  <LatestPosts posts={posts} />
-                </div> */}
+                <div className="pt-3 border-t border-gray-400">
+                  <Portfolio stuff={stuffIMade} />
+                </div>
               </div>
             </div>
           </div>
@@ -54,7 +56,11 @@ export async function getStaticProps() {
     return moment(a.date).unix() - moment(b.date).unix()
   });
 
+  const stuffIMade = getStuffIMade().sort((a, b) => {
+    return moment(a.date).unix() - moment(b.date).unix()
+  });
+
   return {
-    props: { posts },
+    props: { posts, stuffIMade },
   }
 }
