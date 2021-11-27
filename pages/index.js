@@ -31,7 +31,7 @@ export default function Home({ posts = [], stuffIMade = [] }) {
                     <p className="font-sans text-gray-800 mb-0"><span role="img" aria-label="notebook">💻</span>&nbsp;&nbsp;software developer <a href="https://satispay.com" title="satispay">@Satispay</a></p>
                   </div>
                   <div className="flex items-center pt-2">
-                    <p className="font-sans text-xs text-gray-700 mb-0"><a href="https://twitter.com/scusanonhocapit" title="twitter">twitter</a>, <a href="https://github.com/gallaoro" title="github">github</a></p>
+                    <p className="font-sans text-xs text-gray-700 mb-0"><a href="https://github.com/gallaoro" title="github">github</a>, <a href="mailto://gabriele@pallaoro.dev" title="email">email</a></p>
                   </div>
                 </div>
                 <div className="pt-3 border-t border-gray-400">
