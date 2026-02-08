@@ -1,0 +1,62 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Gabriele Pallaoro | Dev",
+  description: "@gallaoro personal website",
+  keywords: ["Gabriele Pallaoro", "Team Leader", "Software Developer", "Smartness", "Web Development", "Portfolio", "Next.js", "TypeScript"],
+  authors: [{ name: "Gabriele Pallaoro" }],
+  creator: "Gabriele Pallaoro",
+  metadataBase: new URL("https://gabriele.pallaoro.dev"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://gabriele.pallaoro.dev",
+    title: "Gabriele Pallaoro | Dev",
+    description: "@gallaoro personal website",
+    siteName: "Gabriele Pallaoro | Dev",
+    images: [
+      {
+        url: "/social-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Gabriele Pallaoro",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    creator: "@gallaoro",
+    title: "Gabriele Pallaoro | Dev",
+    description: "@gallaoro personal website",
+    images: ["/social-preview.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
